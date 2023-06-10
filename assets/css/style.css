@@ -1,0 +1,177 @@
+.carouselContent {
+  padding-left: 15px;
+  width: 100%;
+  position: absolute; 
+  background-color: hsla(199, 100%, 24%, 0.75);
+}
+
+body, header {
+  background-color: #2A2F4F;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+.fTitleSize {
+  font-size: 18px;
+  }
+  .fSize {
+    font-size: 12px;
+    }
+.carBtn {
+  width: 150px;
+  font-size: 10px;
+}
+
+/* carousel */
+#carouselExampleControls {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  border: 0.4rem solid hsla(252, 100%, 14%, 0.55);
+  border-radius: 15px;
+}
+@media screen and (min-width: 768px) {
+
+  #carouselExampleControls {
+    width: 90%;
+    border: 0.4rem solid hsla(252, 100%, 14%, 0.55);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    border:inherit;
+    border-radius: inherit;
+  }
+  .fTitleSize {
+    font-size: 36px;
+  }
+  .fSize {
+    font-size: 18px;
+  }
+  .carBtn {
+    width: auto;
+    font-size: 12px;
+  }
+}
+/* Fin  carousel */
+
+
+.content {
+  background-color: hsla(252, 100%, 14%, 0.55);
+}
+.role {
+  width: 200px;
+}
+
+
+label {
+  color: #17a2b8;
+}
+
+.box {
+  border: 1px solid #c4c4c4;
+  padding: 30px 25px 10px 25px;
+  background: #2A2F4F;
+  margin: 30px auto;
+  width: 460px;
+}
+
+h1.box-logo a {
+  text-decoration:none; 
+}
+h1.box-title {
+  color: #917FB3;
+  font-weight: 300;
+  padding: 15px 25px;
+  line-height: 30px;
+  font-size: 25px;
+  text-align:center;
+  margin: -27px -26px 26px;
+}
+
+.box-button {
+  border-radius: 5px;
+  background: #917FB3;
+  text-align: center;
+  cursor: pointer;
+  font-size: 19px;
+  width: 100%;
+  height: 51px;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  outline:0;
+}
+.size {
+  max-width: 400px;
+  height: auto;
+}
+
+.box-register
+{
+  text-align:center;
+  margin-bottom:0px;
+}
+.box-register a, p
+{
+  text-decoration:none;
+  font-size:16px;
+  color:#917FB3;
+} 
+.box-input {
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-left:10px;
+  border-radius: 5px;
+  /* width: 347px; */
+  width: 100%;
+  height: 50px;
+}
+.box-input:focus {
+    outline: none;
+    border-color:#5c7186;
+}
+.sucess{
+	text-align: center;
+	color: white;
+}
+.sucess a {
+	text-decoration: none;
+	color: #58aef7;
+}
+p.errorMessage {
+    background-color: #e66262;
+    border: #2A2F4F 1px solid;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.btnleft {
+  margin-left: 15px;
+  width: 80px;
+}
+.btnAdmin {
+  width: 90px;
+  font-size: 12px;
+}
+.logo {
+  width: 300px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  .logo {
+    width: 200px;
+  }
+  
+
+}

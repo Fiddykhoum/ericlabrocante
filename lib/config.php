@@ -1,0 +1,75 @@
+<?php
+
+require_once('lib/pdo.php');
+
+//const path pix for cards
+define('_CARDS_IMG_PATH_', 'uploads/cards/');
+
+//const path pix for front
+define('_ASSETS_IMG_PATH_', 'assets/images/');
+
+//const define number of cards in index.php
+define('_GAL_CARDS_LIMIT_', 20);
+
+// header's nav bar
+$mainMenu = [
+  'index.php' => 'Accueil',
+  'gallery.php' => 'Gallerie',
+  'map.php' => 'Nous trouver',
+];
+
+//--------------------------------------------------------------------------------------
+// Change host's param here
+
+//local host
+function host() {
+  $hostChange = [
+      'host' => '127.0.0.1',
+      'username' => 'root',
+      'password' => '',
+      'dbName' => 'brocante',
+    ];   
+  return $hostChange;
+}
+// server LWS
+// function host() {
+//   $hostChange = [
+//       'host' => '185.98.131.160',
+//       'username' => 'fiddy2051642',
+//       'password' => 'c32ogbitxz',
+//       'dbName' => 'fiddy2051642',
+//     ];   
+//   return $hostChange;
+// }
+//--------------------------------------------------------------------------------------
+
+// server params call function host()
+$host = host();
+  define('DB_SERVER', ''.$host['host'].'');
+  define('DB_USERNAME',''.$host['username'].'');
+  define('DB_PASSWORD',''. $host['password'].'');
+  define('DB_NAME',''. $host['dbName'].'');
+  
+// database connexion
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// try if connexion is ok
+if($conn === false){
+    die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
+}
+
+  // users conexion
+  if (isset($_POST['email']) && ($_POST['password'] )) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+  
+    // query search for email and password ok
+    $req = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND password = '$password' ");
+    $num_ligne = mysqli_num_rows($req);
+    if ($num_ligne > 1 ) { 
+      header("location : ajout_contenu.php"); 
+    } else {
+      echo "identifiant ou mot de passe inconnu";
+    }
+
+  }

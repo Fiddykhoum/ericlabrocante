@@ -1,0 +1,86 @@
+CDC:EricLabrocante
+
+il veut un que je lui propose logo, inexistant actuellement
+il veut juste un site vitrine et pouvoir mettre en photo les belles pièces du moment
+(note pour moi: carroussel sur index)
+
+il ne veut pas que l'utilisateur ai à naviguer dans beaucoup de pages , un maximum d'indications
+sur l'index, ou que ces indications sont faciles à touver:
+  - Page d'accueil, 
+  - une page pour montrer un peu le magasin et ce que l'on peut y trouver (note pour moi: gallerie photo), 
+      je lui explique qu'il a le choix soit l'administrer plus ou moins régulièrement une gallerie, 
+      soit laisser statique mais possibilité de le changer sur des moyens termes 
+      (je donne 1 ou 2 ans en exemple), il ne veut pas avoir plus d'interaction que les trois photos 
+      des belles pièces du moment et choisit donc de l'option d'un gallerie statique.
+  - une page avec un plan "où nous trouver" 
+Je lui propose de mettre ses horaires d'ouverture dans le footer et de pouvoir modifier celles-ci
+il n'est pas interressé, mais je pense déjà créer cette fonction pour lui présenter
+Le but etant qu'il n'est pas à faire appelle à moi lors d'un changement structurelle, 
+mais surtout lors de changements ponctuels (Vacances, malade, etc.)
+
+il ne veut pas de ventes en ligne, mais que les gens se déplacent et viennent chinner sur place.
+
+
+
+SQl
+
+Création table 
+CREATE TABLE carousel
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100),    
+    content TEXT,
+    image VARCHAR(255) DEFAULT NULL
+)
+
+
+INSERT INTO `carousel` 
+    (`id`,  `title`, `content`, `image`) 
+VALUES
+    (NULL, "Test01", "Cor d'harmonie ", "cor.jpg"),
+    (NULL, "Test02", "Grammophone ancien à restorer", "grammophone.jpg"),
+    (NULL, "Test03", "Hotloge antique, pièce trés rare", "horloge.jpg");
+
+
+CREATE TABLE cards
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100),    
+    content TEXT,
+    image VARCHAR(255) DEFAULT NULL
+)
+
+CREATE TABLE users
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username VARCHAR(255),
+    email VARCHAR(255),    
+    role INT,
+    password VARCHAR(255)
+)
+
+CREATE TABLE roles
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255),
+    slug VARCHAR(255),    
+    level int(11)
+)
+
+INSERT INTO `roles` (`id`, `name`, `slug`, `level`) 
+VALUES (NULL, 'administrateur', '1', '1')
+
+UPDATE `users` SET `role_id` = '1' WHERE `users`.`username` = Eric
+
+
+CREATE TABLE menus
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    title VARCHAR(100),
+    contenu TEXT,
+    image VARCHAR(255) DEFAULT NULL
+)
+
+
+EriLabroc.1234
+EriLabroc.1234
